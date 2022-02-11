@@ -84,3 +84,7 @@
    to the ~txts~ folder for each category. After that, simply run
    ~python maker.py~ and observe the results. Repeat this process for
    each category.
+
+   The default run will execute over NLP papers, which will
+   result with the following graph:
+   [[../imgs/nlp-papers.png]]
