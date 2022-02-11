@@ -88,4 +88,4 @@
    The default run will execute over NLP papers, which will
    result with the following graph:
 
-   [[../imgs/nlp-papers.png]]
+   [[./imgs/nlp-papers.png]]
