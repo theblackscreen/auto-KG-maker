@@ -1,0 +1,35 @@
+# European Union commission documents
+https://ec.europa.eu/transparency/documents-register/api/files/PV(2021)2401?ersIds=090166e5e7856d91
+https://ec.europa.eu/transparency/documents-register/api/files/PV(2021)2402?ersIds=090166e5e7857cee
+https://ec.europa.eu/transparency/documents-register/api/files/PV(2021)2400?ersIds=090166e5e731a763
+https://ec.europa.eu/transparency/documents-register/api/files/PV(2021)2399?ersIds=090166e5e730f4f0
+https://ec.europa.eu/transparency/documents-register/api/files/PV(2021)2397?ersIds=090166e5e64abd26
+
+# Fiction books
+https://gutenberg.org/files/15/15-0.txt
+https://gutenberg.org/cache/epub/1257/pg1257.txt
+https://gutenberg.org/files/2759/2759-0.txt
+https://gutenberg.org/files/53341/53341-0.txt
+https://gutenberg.org/files/560/560-0.txt
+
+# Newspapers articles (from https://dds.crl.edu/crldelivery/17595)
+https://dds.crl.edu/page/download/39901
+https://dds.crl.edu/page/download/39902
+https://dds.crl.edu/page/download/39903
+https://dds.crl.edu/page/download/39904
+https://dds.crl.edu/page/download/39905
+
+# NLP articles
+https://arxiv.org/pdf/2202.00540.pdf
+https://arxiv.org/pdf/2202.00528.pdf
+https://arxiv.org/pdf/2202.01035.pdf
+https://arxiv.org/pdf/2202.01771.pdf
+https://arxiv.org/pdf/2202.03418.pdf
+
+# Wikipedia articles
+https://en.wikipedia.org/w/index.php?title=Aesara&oldid=1058366823
+https://en.wikipedia.org/w/index.php?title=Slate_and_stylus&oldid=1045424053
+https://en.wikipedia.org/w/index.php?title=Perfect_phylogeny&oldid=1044079338
+https://en.wikipedia.org/w/index.php?title=Hanelle_Culpepper&oldid=1063454313
+https://en.wikipedia.org/w/index.php?title=Mount_Wow&oldid=1009579137
+

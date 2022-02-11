@@ -1,0 +1,86 @@
+* auto-KG-maker
+  ~auto-KG-maker~ is an automatic knowledge graph maker, created with
+  ~Stanford CoreNLP~ suite of tools and ~CogDB~. This repository
+  explains the needed steps to use ~auto-KG-maker~ and additional
+  steps to replicate the results obtained in the paper that explains
+  the process in more detail.
+* Basic setup
+** CogDB setup
+   [[https://cogdb.io/][CogDB]] is a simple graph database implemented in python. To install
+   it, run:
+   #+begin_src bash
+     pip install cogdb
+   #+end_src
+** CoreNLP server setup
+   [[https://stanfordnlp.github.io/CoreNLP/download.html][Follow the official instructions]] that explain how to download and
+   setup CoreNLP. After that, we have to [[https://stanfordnlp.github.io/CoreNLP/corenlp-server.html][start the CoreNLP server]] by
+   running:
+   #+begin_src bash
+     java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -port 9000 -timeout 15000
+   #+end_src
+   in the same directory where we extracted the CoreNLP .jars. Since
+   the language we're working with is English , we don't have to set
+   additional ~serverProperties~. Otherwise, download additional
+   language models and add appropriate flags to the command. To
+   confirm that the server is working, visit ~localhost:9000~ - you
+   should see a website similar to [[http://corenlp.run/][corenlp.run]].
+* Usage
+  Simply modify the ~data_folder_fp~ in ~maker.py~ such that it points
+  to the folder where your data is contained. Your data needs to be a
+  collectio of plain text files, so make sure that you've converted
+  your data correctly.
+
+  After that, simply run:
+  #+begin_src bash
+    python maker.py
+  #+end_src
+  to create a visual representation of a knowledge graph. If you want
+  to do something else with the knowledge graph, modify the ~maker.py~
+  after knowledge graph construction and run the ~maker.py~ again.
+* Result replication
+  If you want to replicate the results of the paper, you'll just have
+  to download the same data that we used to generate the results.
+** Data gathering
+   We will download documents from 5 different domains of work. The
+   download links are placed in the ~download-links.txt~ file. Simply
+   download these links and place them in each folder, separating
+   files by the category domain (lines starting with # in the
+   ~download-links.txt~ file).
+** Data processing
+   Almost all of the downloaded data needs to be processed from some
+   format into plain text. You can do this automatically, using our
+   download script, or with your preffered tools by following the
+   needed steps for each category.
+*** Running the automatic download script
+    Make sure you have ~curl~, ~pandoc~, ~pdftotext~ (from ~poppler~)
+    installed and simply run:
+    #+begin_src bash
+      bash download-script.sh
+    #+end_src
+    This will download all of the used files, process them into the
+    plain text format and will store them into the ~category/txts~
+    directory.
+*** Legislative documents, Newspaper articles, NLP articles
+    Make sure you have [[https://poppler.freedesktop.org/][the poppler library]] installed on your system,
+    since we're going to use the ~pdftotext~ to process the downloaded
+    .pdfs. After downloading the needed files, simply run:
+    #+begin_src bash
+      pdftotext document.pdf
+    #+end_src
+    which will result with the ~document.txt~ plain text file.
+*** Fiction books
+    There is no need to process the downloaded files, since they're
+    already in the plain text format.
+*** Wikipedia articles
+    We'll format the downloaded .html files into the plain text format
+    using [[https://pandoc.org/][pandoc]]. We do this to get rid of the additional html syntax.
+    To do this, just run:
+    #+begin_src bash
+      pandoc page.html --output page.txt
+    #+end_src
+** Creating the graphs
+   Make sure that the CoreNLP server is running and modify the
+   ~data_folder_fp~ variable (inside ~maker.py~) such that it points
+   to the ~txts~ folder for each category. After that, simply run
+   ~python maker.py~ and observe the results. Repeat this process for
+   each category.
